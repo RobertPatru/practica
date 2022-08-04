@@ -61,7 +61,7 @@ const Login = () => {
       if(!res.isError) {
         window.sessionStorage.setItem('token', res.data.token);
       }
-      console.log(323, res);
+     console.log(323, res); 
       // const res = await fetch('http://practica.local/api/login', {
       //   method: 'POST',
       //   headers: {
@@ -75,9 +75,9 @@ const Login = () => {
     }
   }
 
-  const _getUser = async () => {
-    const user = await FetchApi.get('/categories');
-    console.log(332, user);
+  const _getCategories = async () => {
+    const categories = await FetchApi.get('/categories');
+    console.log(categories);
   }
 
   return (
@@ -114,7 +114,7 @@ const Login = () => {
           </Form.Group>
         </div>
         <Button onClick={_login}>Login</Button>
-        <Button onClick={_getUser}>get</Button>
+        <Button onClick={_getCategories}>get categories</Button>
       </div>
     </section>
   )
